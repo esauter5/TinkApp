@@ -1,0 +1,87 @@
+/*main*/
+
+#main {
+	background-color: #DDD;
+	border-radius: 10px;
+	margin-top: 2%;
+	box-shadow: 0px 0px 5px #666;
+	padding: 4%;
+	color: #555;
+	overflow: hidden;
+}
+
+#tinkmain {
+	border-bottom: 2px groove #FFF;
+	padding-bottom: 1%; 
+}
+
+.step {
+	background-color: #FFF;
+	border: 1px solid #CCC;
+	border-radius: 10px;
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 1%;
+}
+
+
+.step h3:first-child{
+	border-bottom: 2px groove #FFF;
+	width: 94%;
+	margin: 2% 2% 0 2%;
+	padding: 0 1% 1% 1%;
+}
+
+.step img {
+	width: 60%;
+	margin: 2%;
+}
+
+.step p{
+	width: 33%;
+	margin: 15% 2% 0 0;
+	float: right;
+}
+
+.step img:not([alt^="Desktop"]){
+	width: 25%;
+	margin-left: 13%;
+}
+
+.step img:not([alt^="Desktop"]) + p{
+	width: 50%;
+}
+
+
+/*media queries*/
+
+@media screen and (max-width: 650px) {
+
+.step img[alt^="Desktop"] {
+	width: 95%;
+	margin: 1%;
+	padding: 1%;
+	clear: both;
+}
+
+.step img:not([alt^="Desktop"]){
+	width: 35%;
+	margin-left: 30%;
+	clear: both;
+}
+
+.step p{
+	width: 90%;
+	margin: 1%;
+	padding: 1%;
+	clear: both;
+}
+
+.step img:not([alt^="Desktop"]) + p{
+	width: 90%;
+}
+
+}
+
+
+
