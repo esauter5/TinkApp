@@ -16,14 +16,16 @@ class TinksController < ApplicationController
   def create
   	@tink = Tink.new(params[:tink])
 
+    title = Nokogiri::HTML(open(@tink.url)).title()
+
     Bitly.use_api_version_3
-    
+
     bitly = Bitly.new('fleetcreations', 'R_77619b7f25394f4f4790e4455249832e')
     u = bitly.shorten(@tink.url)
 
     notification = {
       :device_tokens => ['5B3275894AEB9D7E9693EBD33105B54ECCA8CE4CB7EC11D846B47FCCC0607EEB'],
-      :aps => {:alert => "#{@tink.title} #{u.short_url}", :badge => 1}
+      :aps => {:alert => "#{title} #{u.short_url}", :badge => 1}
     }
 
 
