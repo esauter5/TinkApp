@@ -20,7 +20,7 @@ class TinksController < ApplicationController
     @tink.url = params[:tink][:url]
     @tink.receiver = params[:tink][:receiver]
 
-    if @tink.receiver == 1
+    if @tink.receiver == '1'
       did = '5B3275894AEB9D7E9693EBD33105B54ECCA8CE4CB7EC11D846B47FCCC0607EEB'
     else
       did = 'F421EC8F0AA6D1FE4B9286C04A48168A12512AD9AB669A78DC36C61D708AE2F5'
