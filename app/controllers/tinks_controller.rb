@@ -16,6 +16,8 @@ class TinksController < ApplicationController
   def create
   	@tink = Tink.new(params[:tink])
 
+    Bitly.use_api_version_3
+    
     bitly = Bitly.new('fleetcreations', 'R_77619b7f25394f4f4790e4455249832e')
     u = bitly.shorten(@tink.url)
 
