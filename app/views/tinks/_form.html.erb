@@ -1,6 +1,6 @@
 <%= form_for(@tink) do |f| %>
-	<div id="formtitle"><%= f.label :title %>
-	<%= f.text_field :title %> </div>
+	Send to Mark? 
+	<%= f.check_box :receiver %>
 	<%= f.label :url %>
 	<%= f.text_field :url %> <br />
 	<%= f.submit %>
