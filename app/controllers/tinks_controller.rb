@@ -14,6 +14,7 @@ class TinksController < ApplicationController
   end
 
   def create
+    require 'open-uri'
     @tink = Tink.new
     #@tink = Tink.new(params[:tink])
     @tink.url = params[:tink][:url]
