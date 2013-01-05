@@ -29,6 +29,7 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
     bitly (0.8.0)
       crack (>= 0.1.4)
       httparty (>= 0.7.6)
@@ -42,6 +43,11 @@ GEM
       execjs
     coffee-script-source (1.4.0)
     crack (0.3.1)
+    devise (2.1.2)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (~> 3.1)
+      warden (~> 1.2.1)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -75,6 +81,7 @@ GEM
       jwt (~> 0.1.4)
       multi_json (~> 1.0)
       rack (~> 1.2)
+    orm_adapter (0.4.0)
     pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -123,6 +130,8 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     urbanairship (2.1.2)
       json
+    warden (1.2.1)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
@@ -130,6 +139,7 @@ PLATFORMS
 DEPENDENCIES
   bitly
   coffee-rails (~> 3.2.1)
+  devise
   httparty
   jquery-rails
   nokogiri

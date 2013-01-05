@@ -1,11 +1,10 @@
 TinkApp::Application.routes.draw do
   
-  root to: 'static_pages#index'
+  devise_for :users
+
+  root to: 'tinks#new'
   resources :tinks, :only => [:index, :new, :create, :show]
 
-
-  match '/index', to: 'static_pages#index'
-  match '/about', to: 'static_pages#about'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
