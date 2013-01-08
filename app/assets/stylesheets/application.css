@@ -12,6 +12,16 @@
  *= require_tree .
  */
 
- #user_nav{
- 	float: right;
+
+
+ h1{
+ 	clear:both;
  }
+
+ .notices{
+ 	clear: both;
+ }
+
+.rememberme{
+	float:left;
+}

@@ -1,2 +1,5 @@
-<h1>Tink#index</h1>
-<p>Find me in app/views/tink/index.html.erb</p>
+<h1>Your tinks</h1>
+
+<% @tinks.each do |tink| %>
+	<%= tink.updated_at %> | <%= tink.url %> <br />
+<% end  %>
