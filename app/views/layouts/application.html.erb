@@ -14,7 +14,7 @@
 <nav>
 		<ul class="nav pull-right">
 	<% if user_signed_in? %>
-		<li><%= current_user.email %></li>
+		<li><%= link_to "#{current_user.email}", '#' %></li>
 		<li><%= link_to "My Tinks", tinks_path %></li>
 		<li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
 	<% else %>
@@ -27,9 +27,16 @@
 </div>
 </header>
 
+<% if notice %>
 <div class="notices">
- <p class="notice"><%= notice %></p>
- <p class="alert"><%= alert %></p>
+ <div class="notice"><%= notice %></div>
+<% end %>
+
+ <% if alert  %>
+ <div class="alert">
+ 	<%= alert %>
+ </div>
+ <% end  %>
 </div>
 
 <div class="container">
