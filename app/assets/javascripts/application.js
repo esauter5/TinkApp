@@ -13,3 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(function(){
+	$('.alert').delay(5000).fadeOut(500);
+})

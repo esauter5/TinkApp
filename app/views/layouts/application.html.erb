@@ -27,20 +27,20 @@
 </div>
 </header>
 
-<% if notice %>
 <div class="notices">
- <div class="notice"><%= notice %></div>
-<% end %>
+	<% if notice %>
+ 		<div class="notice"><%= notice %></div>
+	<% end %>
 
- <% if alert  %>
- <div class="alert">
- 	<%= alert %>
- </div>
- <% end  %>
+ 	<% if alert  %>
+ 		<div class="alert">
+ 			<%= alert %>
+ 		</div>
+ 	<% end  %>
 </div>
 
 <div class="container">
-<%= yield %>
+	<%= yield %>
 </div>
 
 </body>

@@ -34,3 +34,10 @@ body {
     padding-top: 0px;
   }
 }
+
+
+.alert{
+	display: inline;
+	margin-left: 100px;
+	padding-bottom: 500px;
+}
