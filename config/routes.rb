@@ -5,6 +5,13 @@ TinkApp::Application.routes.draw do
   root to: 'tinks#new'
   resources :tinks, :only => [:index, :new, :create, :show]
 
+  namespace :api do
+    namespace :v1 do
+      resources :tokens,:only => [:create, :destroy]
+    end
+  end
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
