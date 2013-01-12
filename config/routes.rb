@@ -6,9 +6,9 @@ TinkApp::Application.routes.draw do
   resources :tinks, :only => [:index, :new, :create, :show]
 
   namespace :api do
-    namespace :v1 do
+    #namespace :v1 do
       resources :tokens,:only => [:create, :destroy]
-    end
+    #end
   end
 
 
