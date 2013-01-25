@@ -2,8 +2,7 @@ class TinksController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @tinks = current_user.tinks
-
+    @tinks = current_user.tinks.order("updated_at DESC")
     respond_to do |format|
       format.html #index.html.erb
     end

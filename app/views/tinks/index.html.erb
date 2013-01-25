@@ -1,5 +1,6 @@
 <h1>Your tinks</h1>
 
 <% @tinks.each do |tink| %>
-	<%= tink.updated_at %> | <%= tink.url %> <br />
+	<%= tink.updated_at.strftime("%d %b %y") %> | <%= tink.updated_at.strftime('%H:%M:%S') %> | 
+	<%= tink.url %> <br />
 <% end  %>
