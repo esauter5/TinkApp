@@ -1,10 +1,11 @@
 class TinksController < ApplicationController
   before_filter :authenticate_user!
-
+  #skip_before_filter :verify_authenticity_token, :only => [:create]
   def index
     @tinks = current_user.tinks.order("updated_at DESC")
     respond_to do |format|
       format.html #index.html.erb
+      format.json { render json: @tinks }
     end
   end
 
@@ -24,7 +25,7 @@ class TinksController < ApplicationController
     @tink = Tink.new
     #@tink = Tink.new(params[:tink])
     @tink.url = params[:tink][:url]
-    @tink.receiver = params[:tink][:receiver]
+    #@tink.receiver = params[:tink][:receiver]
     @tink.user = current_user
 
     #if @tink.receiver == '1'
@@ -59,7 +60,7 @@ class TinksController < ApplicationController
   			format.json { render json: @user, status: :created, location: @tink }
   		else
   			format.html { render action: "new"}
-  			format.json { redner json: @tink.errors, status: :unprocessable_entity }
+  			format.json { render json: @tink.errors, status: :unprocessable_entity }
   		end
   	end
   end

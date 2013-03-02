@@ -60,5 +60,7 @@ module TinkApp
     config.assets.version = '1.0'
 
     config.time_zone = 'Eastern Time (US & Canada)'
+
+    #config.force_ssl = true
   end
 end
