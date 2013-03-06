@@ -1,5 +1,13 @@
 TinkApp::Application.routes.draw do
   
+  get "users/index"
+
+  get "users/register_device"
+
+  get "users/delete_device"
+
+  get "tinks/download_needed"
+
   devise_for :users
 
   root to: 'tinks#new'

@@ -1,5 +1,6 @@
 class TinksController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :check_app_install, :except => :download_needed
   #skip_before_filter :verify_authenticity_token, :only => [:create]
   def index
     @tinks = current_user.tinks.order("updated_at DESC")
@@ -74,11 +75,22 @@ class TinksController < ApplicationController
   	end
   end
 
+  def download_needed
+  end
+
     protected
 
     def set_cache_buster
       response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
       response.headers["Pragma"] = "no-cache"
       response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+    end
+
+    private
+
+    def check_app_install
+      if current_user.device_id == ""
+        redirect_to tinks_download_needed_path
+      end
     end
 end
